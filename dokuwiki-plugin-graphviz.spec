@@ -5,11 +5,13 @@ Version:	20100821
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://github.com/splitbrain/%{name}/zipball/master#/%{plugin}.zip
+Source0:	http://github.com/splitbrain/dokuwiki-plugin-%{plugin}/zipball/master#/%{plugin}.zip
 # Source0-md5:	54f864d57574daef265c36840b3fffca
+Patch0:		mediainclude.patch
 URL:		http://www.dokuwiki.org/plugin:graphviz
 BuildRequires:	rpmbuild(macros) >= 1.520
 Requires:	dokuwiki >= 20091225
+Suggests:	graphviz
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,6 +32,7 @@ The plugin supports exporting to OpenOffice through the ODT Plugin
 %prep
 %setup -qc
 mv *-%{plugin}-*/* .
+%patch0 -p1
 
 version=$(awk '/date/{print $2}' plugin.info.txt)
 if [ "$(echo "$version" | tr -d -)" != %{version} ]; then
