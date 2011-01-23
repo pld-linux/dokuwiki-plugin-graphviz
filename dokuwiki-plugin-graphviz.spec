@@ -10,6 +10,7 @@ Source0:	http://github.com/splitbrain/dokuwiki-plugin-%{plugin}/zipball/master#/
 Patch0:		mediainclude.patch
 URL:		http://www.dokuwiki.org/plugin:graphviz
 BuildRequires:	rpmbuild(macros) >= 1.520
+BuildRequires:	unzip
 Requires:	dokuwiki >= 20091225
 Suggests:	graphviz
 BuildArch:	noarch
