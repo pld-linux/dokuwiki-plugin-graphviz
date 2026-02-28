@@ -2,7 +2,7 @@
 Summary:	DokuWiki Graph Visualization Plugin
 Name:		dokuwiki-plugin-%{plugin}
 Version:	20101124
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://github.com/splitbrain/dokuwiki-plugin-%{plugin}/zipball/master#/%{plugin}-%{version}.zip
