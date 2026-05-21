@@ -1,12 +1,12 @@
 %define		plugin		graphviz
 Summary:	DokuWiki Graph Visualization Plugin
 Name:		dokuwiki-plugin-%{plugin}
-Version:	20101124
-Release:	2
+Version:	20250827
+Release:	1
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://github.com/splitbrain/dokuwiki-plugin-%{plugin}/zipball/master#/%{plugin}-%{version}.zip
-# Source0-md5:	549b1025d6bcd8c6a317de8001327ae9
+# Source0-md5:	dbfa0605305719f835d7e5b4c798620d
 URL:		http://www.dokuwiki.org/plugin:graphviz
 BuildRequires:	rpmbuild(macros) >= 1.520
 BuildRequires:	unzip
@@ -18,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		dokuconf	/etc/webapps/dokuwiki
 %define		dokudir		/usr/share/dokuwiki
 %define		plugindir	%{dokudir}/lib/plugins/%{plugin}
-%define		find_lang 	%{_usrlibrpm}/dokuwiki-find-lang.sh %{buildroot}
+%define		find_lang 	%{_rpmconfigdir}/dokuwiki-find-lang.sh %{buildroot}
 
 %description
 This plugin can create directed and non-directed graph images from a
@@ -58,4 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %{plugindir}/*.txt
 %{plugindir}/*.php
 %{plugindir}/*.png
+%{plugindir}/*.css
 %{plugindir}/conf
